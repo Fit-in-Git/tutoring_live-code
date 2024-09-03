@@ -1,0 +1,113 @@
+/* Grundlegendes Styling */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+
+  background-color: #f0f0f0;
+}
+
+h1 {
+  padding: 2rem;
+  text-align: center;
+}
+
+/* Styling für die Sektionen */
+.section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+  gap: 20px;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+/* Beispiel 1: Animierter Button */
+.animated-button {
+  padding: 15px 30px; /* Fügt innenliegenden Abstand (Padding) um den Text des Buttons hinzu */
+  font-size: 18px; /* Setzt die Schriftgröße des Buttons */
+  color: white; /* Macht den Text des Buttons weiß */
+  background-color: #e67e22; /* Setzt die Hintergrundfarbe des Buttons auf ein leuchtendes Orange */
+  border: none; /* Entfernt den Standardrahmen des Buttons */
+  border-radius: 5px; /* Rundet die Ecken des Buttons leicht ab */
+  cursor: pointer; /* Ändert den Mauszeiger in eine Hand, wenn er über dem Button schwebt */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Definiert eine Übergangszeit von 0,3 Sekunden für die Transformation und den Schatten des Buttons */
+}
+
+.animated-button:hover {
+  transform: translateY(
+    -5px
+  ); /* Hebt den Button leicht an, wenn die Maus darüber schwebt */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Fügt einen Schatten hinzu, um den Eindruck zu erwecken, dass der Button "schwebt" */
+}
+
+.animated-button:active {
+  transform: translateY(
+    0
+  ); /* Setzt den Button zurück in seine ursprüngliche Position, wenn er geklickt wird */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Reduziert den Schatten, um den Eindruck zu erwecken, dass der Button gedrückt wird */
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+/* Beispiel 2: Animiertes Balkendiagramm */
+.chart {
+  display: flex; /* Macht das Element zu einem flexiblen Container */
+  align-items: flex-end; /* Ordnet die Kinder-Elemente (Balken) am unteren Rand des Containers aus */
+  gap: 20px; /* Fügt zwischen den Balken einen Abstand von 20px ein */
+  width: 100%; /* Das Diagramm nimmt die volle Breite seines Containers ein */
+  max-width: 600px; /* Begrenzung der maximalen Breite des Diagramms */
+  height: 70%; /* Setzt die Höhe des gesamten Diagramms auf 70% des Elternelements */
+}
+
+.bar {
+  background-color: #3498db; /* Setzt die Hintergrundfarbe der Balken auf ein leuchtendes Blau */
+  color: white; /* Macht den Text auf den Balken weiß */
+  font-weight: bold; /* Macht den Text fett */
+  text-align: center; /* Zentriert den Text horizontal im Balken */
+  width: 100px; /* Setzt die Breite jedes Balkens */
+  height: 0; /* Setzt die anfängliche Höhe jedes Balkens auf 0 */
+  border-radius: 5px 5px 0 0; /* Rundet die oberen Ecken der Balken leicht ab */
+  transition: height 1s ease-in-out; /* Definiert eine Übergangszeit von 1 Sekunde für die Höhe der Balken */
+  animation: fillBar 2s forwards; /* Führt die Animation zum Füllen der Balken aus */
+}
+
+.bar:hover {
+  background-color: #2980b9; /* Ändert die Hintergrundfarbe des Balkens, wenn die Maus darüber schwebt */
+}
+
+@keyframes fillBar {
+  to {
+    height: var(
+      --bar-height
+    ); /* Füllt den Balken bis zur Höhe, die durch die CSS-Variable --bar-height definiert ist */
+  }
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+/* Beispiel 3: Blinking Text */
+.blinking-text {
+  font-size: 24px; /* Setzt die Schriftgröße des Textes */
+  color: #e74c3c; /* Setzt die Textfarbe auf ein leuchtendes Rot */
+  font-weight: bold; /* Macht den Text fett */
+  animation: blink 1s infinite; /* Lässt den Text kontinuierlich im Takt von 1 Sekunde blinken */
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1; /* Der Text ist voll sichtbar */
+  }
+  50% {
+    opacity: 0; /* Der Text ist unsichtbar */
+  }
+}
